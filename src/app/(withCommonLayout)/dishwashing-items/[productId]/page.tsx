@@ -18,6 +18,7 @@ export const generateStaticParams = async () => {
     productId: item._id,
   }));
 };
+
 const SingleProduct = async ({ params }: TParams) => {
   const res = await fetch(
     `https://assignment-8-server-im7o0htlt-shoriful-islams-projects.vercel.app/api/v1/products/${params.productId}`
@@ -28,7 +29,7 @@ const SingleProduct = async ({ params }: TParams) => {
     <div>
       <Container>
         <h1 className="text-xl max-w-[30ch] lg:max-w-[60ch] mt-10 p-6">
-          {data?.data.title}
+          {data?.data?.title}
         </h1>
         <section className="bg-white flex flex-col lg:flex-row  items-center px-4 py-6 mb-10">
           <div className="w-full lg:w-[50%]">
@@ -50,7 +51,7 @@ const SingleProduct = async ({ params }: TParams) => {
               <FaRegHeart className="cursor-pointer" />
             </div>
             <div className="w-full flex items-center mt-2">
-              <p className="text-xl">${data?.data.price}</p>
+              <p className="text-xl">${data?.data?.price}</p>
 
               <span className="mr-2 ml-2">|</span>
               <FaSplotch className="text-yellow-500 mr-2 cursor-pointer" />
@@ -59,10 +60,10 @@ const SingleProduct = async ({ params }: TParams) => {
               <FaSplotch className="text-yellow-500 mr-2 cursor-pointer" />
               <FaSplotch className="text-yellow-500 mr-2 cursor-pointer" />
             </div>
-            <p className="text-sm mt-2">Brand: {data?.data.category}</p>
+            <p className="text-sm mt-2">Brand: {data?.data?.category}</p>
             <hr className="border-1 border-yellow-300 my-4" />
 
-            <p>{data?.data.description}</p>
+            <p>{data?.data?.description}</p>
           </div>
         </section>
       </Container>
@@ -71,7 +72,7 @@ const SingleProduct = async ({ params }: TParams) => {
         <div className="bg-gray-100 p-4 mb-20">
           <Container>
             <p className="text-xl font-medium mb-4 ">Description</p>
-            <p>{data?.data.description}</p>
+            <p>{data?.data?.description}</p>
           </Container>
         </div>
       </section>
