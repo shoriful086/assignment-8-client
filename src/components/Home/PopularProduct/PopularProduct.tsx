@@ -5,11 +5,14 @@ import { TProductCard } from "@/types/productCard.type";
 import Link from "next/link";
 
 const PopularProduct = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/products", {
-    next: {
-      revalidate: 30,
-    },
-  });
+  const res = await fetch(
+    "https://assignment-8-server-im7o0htlt-shoriful-islams-projects.vercel.app/api/v1/products",
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
+  );
   const data = await res.json();
 
   return (

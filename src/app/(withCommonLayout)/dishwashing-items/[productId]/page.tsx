@@ -10,7 +10,9 @@ type TParams = {
 };
 
 export const generateStaticParams = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/products");
+  const res = await fetch(
+    "https://assignment-8-server-im7o0htlt-shoriful-islams-projects.vercel.app/api/v1/products"
+  );
   const data = await res.json();
   return data?.data.slice(0, 10).map((item: TProductCard) => ({
     productId: item._id,
@@ -18,7 +20,7 @@ export const generateStaticParams = async () => {
 };
 const SingleProduct = async ({ params }: TParams) => {
   const res = await fetch(
-    `http://localhost:5000/api/v1/products/${params.productId}`
+    `https://assignment-8-server-im7o0htlt-shoriful-islams-projects.vercel.app/api/v1/products/${params.productId}`
   );
   const data = await res.json();
 

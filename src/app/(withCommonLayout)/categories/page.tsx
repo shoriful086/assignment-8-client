@@ -2,7 +2,9 @@ import Container from "@/components/container/Container";
 import Image from "next/image";
 
 const CategoriesPage = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/products");
+  const res = await fetch(
+    "https://assignment-8-server-im7o0htlt-shoriful-islams-projects.vercel.app/api/v1/products"
+  );
   const data = await res.json();
   return (
     <Container>

@@ -4,9 +4,12 @@ import { TProductCard } from "@/types/productCard.type";
 import Link from "next/link";
 
 const FlashSale = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/products", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://assignment-8-server-im7o0htlt-shoriful-islams-projects.vercel.app/api/v1/products",
+    {
+      cache: "no-store",
+    }
+  );
   const data = await res.json();
 
   return (
